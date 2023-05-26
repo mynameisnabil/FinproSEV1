@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Form"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/headerbiru"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/headerformtxt"
+                android:layout_margin="20dp"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/formheadericon"
+                android:layout_margin="20dp"/>
+
+
+        </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Username"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etNameForm"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/recentagleedit"
+                android:hint="Enter your username"
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:text="Email"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etEmailForm"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/recentagleedit"
+                android:hint="Enter your email"
+                android:inputType="textEmailAddress"
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:text="Phone"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/etPhoneForm"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/recentagleedit"
+                android:hint="Enter your phone number"
+                android:inputType="phone"
+                android:padding="10dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            >
+
+            <ImageButton
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/btnnext"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
