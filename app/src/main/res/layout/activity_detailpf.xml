@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailActivity"
+    tools:context=".DetailPfActivity"
     android:background="#49BEFF">
 
     <ScrollView
@@ -20,6 +20,7 @@
 
 
                 <ImageView
+                    android:id="@+id/imgLapangan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:src="@drawable/lapang1"
@@ -43,6 +44,7 @@
                     >
 
                     <TextView
+                        android:id="@+id/txtNamaLapangan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="BINUS Basketball Court"
@@ -59,6 +61,7 @@
                         >
 
                         <TextView
+                            android:id="@+id/txtDeskripsiLapangan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="This is basketball court University of Bina Nusantara. Besides Binus students, you can order hourly. open every day."
@@ -117,6 +120,7 @@
                     >
 
                         <TextView
+                            android:id="@+id/txtOpenHourLapangan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Pukul   : 08.00 - 22.00 WIB"
@@ -169,6 +173,7 @@
                         >
 
                         <TextView
+                            android:id="@+id/txtPriceLapangan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Jam 08.00 - 17.00 : Rp. 100.000 /Jam"
@@ -178,15 +183,6 @@
                             android:layout_marginTop="10dp"
                             />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Jam 17.00 - 22.00 : Rp. 120.000 /Jam"
-                            android:textStyle="normal"
-                            android:textSize="15sp"
-                            android:textColor="@color/black"
-                            android:layout_marginTop="10dp"
-                            />
 
                     </LinearLayout>
 
@@ -230,6 +226,7 @@
                         >
 
                         <TextView
+                            android:id="@+id/txtContactNamaLapangan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textStyle="normal"
@@ -241,6 +238,7 @@
 
 
                         <TextView
+                            android:id="@+id/txtContactPhoneLapangan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textStyle="normal"
@@ -251,6 +249,7 @@
                             />
 
                         <TextView
+                            android:id="@+id/txtContactEmailLapangan"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textStyle="normal"
@@ -294,7 +293,7 @@
             </androidx.cardview.widget.CardView>
 
             <ImageButton
-                android:id="@+id/btn_book_now"
+                android:id="@+id/btnBookDetailLapangan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"

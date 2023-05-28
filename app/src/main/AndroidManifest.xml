@@ -24,7 +24,7 @@
             android:name=".NewsActivity"
             android:exported="false" />
         <activity
-            android:name=".PlaceAndFacilityActivity"
+            android:name=".placefacility.PlaceAndFacilityActivity"
             android:exported="false" />
         <activity
             android:name=".PaymentActivity"
@@ -33,7 +33,7 @@
             android:name=".ScheduleActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailActivity"
+            android:name=".DetailPfActivity"
             android:exported="false" />
 
         <meta-data
@@ -41,7 +41,7 @@
             android:value="AIzaSyCGLLwYdajhaKB_S_tNBo88XTx4rEy7hK0" />
 
         <activity
-            android:name=".Login.LoginActivity"
+            android:name=".Register.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".CategoryActivity"
@@ -53,7 +53,7 @@
             android:name=".Form"
             android:exported="false" />
         <activity
-            android:name=".Register.RegisterActivity"
+            android:name=".Login.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -15,6 +15,7 @@ import com.example.finprov1.database.AppDatabase;
 import com.example.finprov1.database.User;
 import com.example.finprov1.database.UserDao;
 import com.example.finprov1.databinding.ActivityLoginBinding;
+import com.example.finprov1.placefacility.PlaceAndFacilityActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -64,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
                         editor.apply();
 
                         Toast.makeText(LoginActivity.this, "Berhasil Login", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        startActivity(new Intent(LoginActivity.this, PlaceAndFacilityActivity.class));
 
                     } else {
                         Toast.makeText(LoginActivity.this, "User Tidak Ditemukan", Toast.LENGTH_SHORT).show();
