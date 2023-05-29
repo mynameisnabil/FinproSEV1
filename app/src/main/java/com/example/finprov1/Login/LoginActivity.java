@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
                         editor.apply();
 
                         Toast.makeText(LoginActivity.this, "Berhasil Login", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(LoginActivity.this, PlaceAndFacilityActivity.class));
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
 
                     } else {
                         Toast.makeText(LoginActivity.this, "User Tidak Ditemukan", Toast.LENGTH_SHORT).show();

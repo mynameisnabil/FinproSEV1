@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".HomeFragment"
+    tools:context=".recom.HomeFragment"
     android:orientation="vertical">
 
     <ScrollView
@@ -89,35 +89,36 @@
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_margin="10dp"
                     android:background="@color/white"
                     android:src="@drawable/newsicon" />
 
                 <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/btnPf"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_margin="10dp"
                     android:background="@color/white"
                     android:src="@drawable/pficon" />
 
                 <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_margin="10dp"
                     android:background="@color/white"
                     android:src="@drawable/communityicon" />
 
                 <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_margin="10dp"
                     android:background="@color/white"
                     android:src="@drawable/turnamenticon" />
                 <ImageButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_margin="10dp"
                     android:background="@color/white"
                     android:src="@drawable/trainingicon" />
@@ -138,12 +139,13 @@
 
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRecom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item"
+                tools:listitem="@layout/item_recom"
 
                 />
 
@@ -159,13 +161,13 @@
 
 
             <androidx.recyclerview.widget.RecyclerView
-
+                android:id="@+id/rvLatst"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item"
+                tools:listitem="@layout/item_recom"
                 />
 
             <TextView
@@ -180,12 +182,13 @@
 
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPopular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item"
+                tools:listitem="@layout/item_recom"
                 />
 
 
