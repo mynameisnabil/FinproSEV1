@@ -40,11 +40,11 @@ public class HomeFragment extends Fragment {
 
         RecomendedAdapter adapter = new RecomendedAdapter();
         binding.rvRecom.setAdapter(adapter);
-        binding.rvRecom.setLayoutManager(new LinearLayoutManager(requireContext()));
+        binding.rvRecom.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
         binding.rvLatst.setAdapter(adapter);
-        binding.rvLatst.setLayoutManager(new LinearLayoutManager(requireContext()));
+        binding.rvLatst.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
         binding.rvPopular.setAdapter(adapter);
-        binding.rvPopular.setLayoutManager(new LinearLayoutManager(requireContext()));
+        binding.rvPopular.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
 
 
         binding.btnPf.setOnClickListener(new View.OnClickListener() {
@@ -57,8 +57,16 @@ public class HomeFragment extends Fragment {
 
 
         List<RecomendedModel> listRecomended = new ArrayList<>();
-        listRecomended.add(new RecomendedModel("Judul","SubJudul",R.drawable.ic_launcher_background));
-
+        listRecomended.add(new RecomendedModel("Lapang 1", "Lapangan Latihan Persija Jakarta", R.drawable.ic_launcher_background));
+        listRecomended.add(new RecomendedModel("Lapang 2", "Lapangan Futsal Cibubur", R.drawable.ic_launcher_background));
+        listRecomended.add(new RecomendedModel("Lapang 3", "Lapangan Sepak Bola Senayan", R.drawable.ic_launcher_background));
+        listRecomended.add(new RecomendedModel("Lapang 4", "Lapangan Tenis Pondok Indah", R.drawable.ic_launcher_background));
+        listRecomended.add(new RecomendedModel("Lapang 5", "Lapangan Bulu Tangkis Grogol", R.drawable.ic_launcher_background));
+        listRecomended.add(new RecomendedModel("Lapang 6", "Lapangan Golf Pantai Indah Kapuk", R.drawable.ic_launcher_background));
+        listRecomended.add(new RecomendedModel("Lapang 7", "Lapangan Basket Kemang", R.drawable.ic_launcher_background));
+        listRecomended.add(new RecomendedModel("Lapang 8", "Lapangan Voli Slipi", R.drawable.ic_launcher_background));
+        listRecomended.add(new RecomendedModel("Lapang 9", "Lapangan Renang Menteng", R.drawable.ic_launcher_background));
+        listRecomended.add(new RecomendedModel("Lapang 10", "Lapangan Badminton Kebayoran Baru", R.drawable.ic_launcher_background));
         adapter.setData(listRecomended);
     }
 }
