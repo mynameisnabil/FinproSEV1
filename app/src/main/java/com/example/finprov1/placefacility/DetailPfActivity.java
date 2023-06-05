@@ -1,9 +1,12 @@
-package com.example.finprov1;
+package com.example.finprov1.placefacility;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
+import com.example.finprov1.R;
 import com.example.finprov1.databinding.ActivityDetailpfBinding;
 import com.example.finprov1.placefacility.Pfmodel;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -39,6 +42,16 @@ public class DetailPfActivity extends AppCompatActivity {
         binding.txtContactEmailLapangan.setText(data.getEmailPenjual());
 
 
+        binding.btnBookDetailLapangan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //BAWA PUTEXTRA KE BOOKING ACTIVITY
+                Intent intent = new Intent(DetailPfActivity.this, BookingActivity.class);
+                intent.putExtra("pfmodel", data);
+                startActivity(intent);
+
+            }
+        });
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);

@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.finprov1.DetailPfActivity;
 import com.example.finprov1.R;
 import com.example.finprov1.databinding.ItempfBinding;
 

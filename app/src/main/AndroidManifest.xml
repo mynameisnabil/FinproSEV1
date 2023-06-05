@@ -10,7 +10,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinproV1"
+        android:enableOnBackInvokedCallback="true"
         tools:targetApi="31">
+
+
+        <activity
+            android:name=".placefacility.BookingActivity"
+            android:exported="false" />
         <activity
             android:name=".TrainingActivity"
             android:exported="false" />
@@ -33,7 +39,7 @@
             android:name=".ScheduleActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailPfActivity"
+            android:name=".placefacility.DetailPfActivity"
             android:exported="false" />
 
         <meta-data
