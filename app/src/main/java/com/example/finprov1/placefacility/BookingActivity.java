@@ -3,6 +3,8 @@ package com.example.finprov1.placefacility;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,8 +13,6 @@ import android.widget.DatePicker;
 import android.widget.Toast;
 
 import com.example.finprov1.database.AppDatabase;
-import com.example.finprov1.database.PfTransaksi;
-import com.example.finprov1.database.pfTransaksiDao;
 import com.example.finprov1.databinding.ActivityBookingBinding;
 
 import java.util.Calendar;
@@ -31,38 +31,41 @@ public class BookingActivity extends AppCompatActivity {
 
         setCalender(); // Panggil metode setCalender() di sini
 
-        pfTransaksiDao pfTransaksiDao = AppDatabase.getInstance(this).pftransactionDao();
+        pfTransactionDao pfTransactionDao = AppDatabase.getInstance(this).pftransactionDao();
 
         binding.btnBookNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PfTransaksi pfTransaksi = new PfTransaksi();
+                PfTransaction pfTransaction = new PfTransaction();
+
+                SharedPreferences sharedPreferences = getSharedPreferences("sharedpref", MODE_PRIVATE);
+                int uid = sharedPreferences.getInt("uid", 0);
 
                 String emailPembeli = binding.etEmailForm.getText().toString();
                 String namePembeli = binding.etNameForm.getText().toString();
                 String phonePembeli = binding.etPhoneForm.getText().toString();
                 String datePembeli = binding.dateEdt.getText().toString();
-                pfTransaksi.judulLapang = data.getNamalapangan();
-                pfTransaksi.kotaLapang = data.getKota();
-                pfTransaksi.hargaLapang = data.getPrice();
-                pfTransaksi.email = emailPembeli;
-                pfTransaksi.name = namePembeli;
-                pfTransaksi.phone = phonePembeli;
-                pfTransaksi.date = datePembeli;
+                pfTransaction.judulLapang = data.getNamalapangan();
+                pfTransaction.kotaLapang = data.getKota();
+                pfTransaction.hargaLapang = data.getPrice();
+                pfTransaction.email = emailPembeli;
+                pfTransaction.name = namePembeli;
+                pfTransaction.phone = phonePembeli;
+                pfTransaction.date = datePembeli;
+                pfTransaction.uid = uid;
 
-
-                pfTransaksiDao.pfAddTransaksi(pfTransaksi);
-                Log.d("BookingActivity", "Data transaksi: " + pfTransaksi.toString());
 
                 try {
-                    pfTransaksiDao.pfAddTransaksi(pfTransaksi);
-                    Log.d("BookingActivity", "Data transaksi berhasil disimpan: " + pfTransaksi.toString());
+                    pfTransactionDao.pfAddTransaksi(pfTransaction);
+                    Log.d("BookingActivity", "Data transaksi berhasil disimpan: " + pfTransaction.toString());
                     Toast.makeText(BookingActivity.this, "Data transaksi berhasil disimpan", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(BookingActivity.this, PlaceAndFacilityActivity.class);
+                        setResult(RESULT_OK, intent);
+                    finish();
                 } catch (SQLiteException e) {
                     Log.e("BookingActivity", "Gagal menyimpan data transaksi: " + e.getMessage());
                     Toast.makeText(BookingActivity.this, "Gagal menyimpan data transaksi", Toast.LENGTH_SHORT).show();
                 }
-
 
 
             }

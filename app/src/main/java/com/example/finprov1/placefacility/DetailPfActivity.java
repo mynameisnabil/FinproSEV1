@@ -8,7 +8,6 @@ import android.view.View;
 
 import com.example.finprov1.R;
 import com.example.finprov1.databinding.ActivityDetailpfBinding;
-import com.example.finprov1.placefacility.Pfmodel;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;

@@ -1,4 +1,4 @@
-package com.example.finprov1.database;
+package com.example.finprov1.auth;
 
 
 import androidx.room.ColumnInfo;

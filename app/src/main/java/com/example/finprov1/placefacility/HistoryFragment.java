@@ -15,9 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.finprov1.database.AppDatabase;
-import com.example.finprov1.database.pfTransaksiDao;
 import com.example.finprov1.databinding.FragmentHistoryBinding;
-import com.example.finprov1.placefacility.pfTransaksiAdapter;
 
 public class HistoryFragment extends Fragment {
 
@@ -42,14 +40,14 @@ public class HistoryFragment extends Fragment {
         binding.rvBaru.setHasFixedSize(true);
         binding.rvBaru.setAdapter(adapter);
 
-        pfTransaksiDao pfTransaksiDao = AppDatabase.getInstance(requireContext()).pftransactionDao();
+        pfTransactionDao pfTransactionDao = AppDatabase.getInstance(requireContext()).pftransactionDao();
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("sharedpref", MODE_PRIVATE);
         int uid = sharedPreferences.getInt("uid", 0);
-        adapter.setData(pfTransaksiDao.getAll(uid));
+        adapter.setData(pfTransactionDao.getAll(uid));
 
 //        debug menggunakan log cek apakah data sudah ada apa tidak
 
-       Log.d("cek", "onViewCreated: "+pfTransaksiDao.getAll(uid));
+       Log.d("cek", "onViewCreated: "+ pfTransactionDao.getAll(uid));
 
 
         adapter.notifyDataSetChanged();

@@ -1,4 +1,4 @@
-package com.example.finprov1.Register;
+package com.example.finprov1.auth;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,11 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.finprov1.Login.LoginActivity;
-import com.example.finprov1.R;
 import com.example.finprov1.database.AppDatabase;
-import com.example.finprov1.database.User;
-import com.example.finprov1.database.UserDao;
 import com.example.finprov1.databinding.ActivityRegisterBinding;
 
 public class RegisterActivity extends AppCompatActivity {

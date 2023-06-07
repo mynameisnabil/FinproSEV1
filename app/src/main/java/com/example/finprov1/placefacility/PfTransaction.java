@@ -1,11 +1,11 @@
-package com.example.finprov1.database;
+package com.example.finprov1.placefacility;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class PfTransaksi {
+public class PfTransaction {
 
 
     @Override

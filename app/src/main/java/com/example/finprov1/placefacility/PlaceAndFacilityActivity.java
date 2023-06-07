@@ -6,9 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.os.Bundle;
 
 import com.example.finprov1.R;
-import com.example.finprov1.databinding.ActivityLoginBinding;
 import com.example.finprov1.databinding.ActivityPlaceAndFacilityBinding;
-import com.example.finprov1.databinding.FragmentHomeBinding;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,8 +1,10 @@
-package com.example.finprov1;
+package com.example.finprov1.news;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.finprov1.R;
 
 public class NewsActivity extends AppCompatActivity {
 

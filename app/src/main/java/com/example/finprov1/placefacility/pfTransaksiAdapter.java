@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.finprov1.R;
-import com.example.finprov1.database.PfTransaksi;
 import com.example.finprov1.databinding.ItemPftransaksiBinding;
 
 import java.util.ArrayList;
@@ -16,9 +15,9 @@ import java.util.List;
 
 public class pfTransaksiAdapter extends RecyclerView.Adapter<pfTransaksiAdapter.ViewHolder> {
 
-    List<PfTransaksi> listTransaksi = new ArrayList<>();
+    List<PfTransaction> listTransaksi = new ArrayList<>();
 
-    public void setData(List<PfTransaksi> listTransaksi) {
+    public void setData(List<PfTransaction> listTransaksi) {
         this.listTransaksi.clear();
         this.listTransaksi.addAll(listTransaksi);
         notifyDataSetChanged();
@@ -33,7 +32,7 @@ public class pfTransaksiAdapter extends RecyclerView.Adapter<pfTransaksiAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        PfTransaksi pftransaksi = listTransaksi.get(position);
+        PfTransaction pftransaksi = listTransaksi.get(position);
         holder.bindData(pftransaksi);
     }
 
@@ -51,7 +50,7 @@ public class pfTransaksiAdapter extends RecyclerView.Adapter<pfTransaksiAdapter.
             binding = ItemPftransaksiBinding.bind(itemView);
         }
 
-        public void bindData(PfTransaksi pftransaksi) {
+        public void bindData(PfTransaction pftransaksi) {
             binding.juduPfItemTransaksi.setText(pftransaksi.judulLapang);
             binding.kotaPfItemTransaksi.setText(pftransaksi.kotaLapang);
             binding.hargaPfItemTransaksi.setText(pftransaksi.hargaLapang);

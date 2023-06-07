@@ -1,4 +1,4 @@
-package com.example.finprov1.Login;
+package com.example.finprov1.auth;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,13 +9,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.finprov1.MainActivity;
-import com.example.finprov1.R;
-import com.example.finprov1.Register.RegisterActivity;
 import com.example.finprov1.database.AppDatabase;
-import com.example.finprov1.database.User;
-import com.example.finprov1.database.UserDao;
 import com.example.finprov1.databinding.ActivityLoginBinding;
-import com.example.finprov1.placefacility.PlaceAndFacilityActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
