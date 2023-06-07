@@ -18,23 +18,18 @@ public class pfTransaksiAdapter extends RecyclerView.Adapter<pfTransaksiAdapter.
 
     List<PfTransaksi> listTransaksi = new ArrayList<>();
 
-
     public void setData(List<PfTransaksi> listTransaksi) {
         this.listTransaksi.clear();
         this.listTransaksi.addAll(listTransaksi);
         notifyDataSetChanged();
     }
 
-
-
     @NonNull
     @Override
-    public pfTransaksiAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_pftransaksi, parent, false);
         return new ViewHolder(v);
-
     }
-
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
@@ -50,10 +45,10 @@ public class pfTransaksiAdapter extends RecyclerView.Adapter<pfTransaksiAdapter.
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ItemPftransaksiBinding binding;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             binding = ItemPftransaksiBinding.bind(itemView);
-
         }
 
         public void bindData(PfTransaksi pftransaksi) {

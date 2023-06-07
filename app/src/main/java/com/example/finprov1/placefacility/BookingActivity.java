@@ -3,6 +3,7 @@ package com.example.finprov1.placefacility;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -52,6 +53,15 @@ public class BookingActivity extends AppCompatActivity {
 
                 pfTransaksiDao.pfAddTransaksi(pfTransaksi);
                 Log.d("BookingActivity", "Data transaksi: " + pfTransaksi.toString());
+
+                try {
+                    pfTransaksiDao.pfAddTransaksi(pfTransaksi);
+                    Log.d("BookingActivity", "Data transaksi berhasil disimpan: " + pfTransaksi.toString());
+                    Toast.makeText(BookingActivity.this, "Data transaksi berhasil disimpan", Toast.LENGTH_SHORT).show();
+                } catch (SQLiteException e) {
+                    Log.e("BookingActivity", "Gagal menyimpan data transaksi: " + e.getMessage());
+                    Toast.makeText(BookingActivity.this, "Gagal menyimpan data transaksi", Toast.LENGTH_SHORT).show();
+                }
 
 
 

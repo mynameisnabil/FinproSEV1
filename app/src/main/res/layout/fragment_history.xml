@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HistoryFragment">
+    tools:context=".placefacility.HistoryFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -68,13 +68,13 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvHistory"
+        android:id="@+id/rvBaru"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="10dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_pftransaksi"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
         />
 

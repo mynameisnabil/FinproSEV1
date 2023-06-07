@@ -1,5 +1,7 @@
 package com.example.finprov1.database;
 
+import android.database.sqlite.SQLiteException;
+
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;

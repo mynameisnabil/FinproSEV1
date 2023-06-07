@@ -1,13 +1,15 @@
-package com.example.finprov1;
+package com.example.finprov1.placefacility;
 
 import static android.content.Context.MODE_PRIVATE;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,19 +34,25 @@ public class HistoryFragment extends Fragment {
 
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(@Nullable View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         pfTransaksiAdapter adapter = new pfTransaksiAdapter();
-        binding.rvHistory.setLayoutManager(new LinearLayoutManager(requireContext()));
-        binding.rvHistory.setAdapter(adapter);
+        binding.rvBaru.setLayoutManager(new LinearLayoutManager(requireContext()));
+        binding.rvBaru.setHasFixedSize(true);
+        binding.rvBaru.setAdapter(adapter);
 
         pfTransaksiDao pfTransaksiDao = AppDatabase.getInstance(requireContext()).pftransactionDao();
         SharedPreferences sharedPreferences = requireContext().getSharedPreferences("sharedpref", MODE_PRIVATE);
         int uid = sharedPreferences.getInt("uid", 0);
         adapter.setData(pfTransaksiDao.getAll(uid));
+
+//        debug menggunakan log cek apakah data sudah ada apa tidak
+
+       Log.d("cek", "onViewCreated: "+pfTransaksiDao.getAll(uid));
+
+
         adapter.notifyDataSetChanged();
-        // Menambahkan pemanggilan ini
     }
 
 }
