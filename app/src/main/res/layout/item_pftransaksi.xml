@@ -44,8 +44,10 @@
                     android:layout_marginTop="2dp"
                     android:layout_marginRight="10dp"
                     android:text="Judul"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    />
 
                 <TextView
                     android:id="@+id/kodePfItemTransaksi"
@@ -56,7 +58,9 @@
                     android:layout_marginRight="10dp"
                     android:text="JX1213232424KG"
                     android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    />
 
 
                 <TextView
@@ -76,9 +80,11 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="2dp"
                     android:layout_marginRight="10dp"
-                    android:text="Rp 100.000 / Hour"
+                    android:text="Rp 200.000"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    />
 
 
 

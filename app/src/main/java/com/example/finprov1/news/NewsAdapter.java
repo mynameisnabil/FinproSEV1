@@ -1,14 +1,14 @@
 package com.example.finprov1.news;
 
+import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.finprov1.R;
+import com.example.finprov1.databinding.ItemnewsBinding;
 
 import java.util.List;
 
@@ -18,6 +18,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     private OnNewsClickListener listener;
 
     public interface OnNewsClickListener {
+        void onCreateView(Bundle savedInstanceState);
+
         void onNewsClick(NewsModel newsModel);
     }
 
@@ -29,8 +31,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     @NonNull
     @Override
     public NewsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = View.inflate(parent.getContext(), R.layout.itemnews, null);
-        return new NewsViewHolder(view, listener);
+        ItemnewsBinding binding = ItemnewsBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        return new NewsViewHolder(binding, listener);
     }
 
     @Override
@@ -46,17 +48,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
     static class NewsViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView newsImage;
-        TextView newsTitle;
-        TextView newsAuthorLocation;
-        TextView newsDescription;
+        private ItemnewsBinding binding;
 
-        public NewsViewHolder(@NonNull View itemView, OnNewsClickListener listener) {
-            super(itemView);
-            newsImage = itemView.findViewById(R.id.imgUser);
-            newsTitle = itemView.findViewById(R.id.news_title);
-            newsAuthorLocation = itemView.findViewById(R.id.news_author_location);
-            newsDescription = itemView.findViewById(R.id.news_description);
+        public NewsViewHolder(ItemnewsBinding binding, OnNewsClickListener listener) {
+            super(binding.getRoot());
+            this.binding = binding;
 
             itemView.setOnClickListener(v -> {
                 int position = getAdapterPosition();
@@ -68,10 +64,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         }
 
         public void bind(NewsModel newsModel) {
-            newsImage.setImageResource(newsModel.getImageResourceId());
-            newsTitle.setText(newsModel.getTitle());
-            newsAuthorLocation.setText(newsModel.getAuthorLocation());
-            newsDescription.setText(newsModel.getDescription());
+            binding.imgUser.setImageResource(newsModel.getImageResourceId());
+            binding.newsTitle.setText(newsModel.getTitle());
+            binding.newsAuthorLocation.setText(newsModel.getAuthorLocation());
+            binding.newsDescription.setText(newsModel.getDescription());
         }
     }
 }
