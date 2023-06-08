@@ -3,18 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".auth.LoginActivity">
+    tools:context=".auth.LoginActivity"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp"
+        >
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/logoapk"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/hobbyhivelogo"
             android:padding="20dp"/>
 
         <TextView
@@ -27,7 +31,6 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-
         <EditText
             android:id="@+id/etEmailLogin"
             android:layout_width="match_parent"
@@ -37,7 +40,6 @@
             android:background="@drawable/recentagleedit"
             android:hint="Username"
             android:padding="10dp" />
-
 
         <EditText
             android:id="@+id/etPasswordLogin"
@@ -68,7 +70,6 @@
 
         </LinearLayout>
 
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,9 +84,7 @@
                 android:layout_below="@id/etPasswordLogin"
                 android:background="@drawable/loginbtn" />
 
-
         </LinearLayout>
-
 
         <TextView
             android:layout_width="match_parent"
@@ -123,16 +122,12 @@
                 android:background="@drawable/fb"
                 />
 
-
-
-
         </LinearLayout>
-
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tvRegister"
+        android:id="@+id/tvGoToRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Don’t have account? Register"

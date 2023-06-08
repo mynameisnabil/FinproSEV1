@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.finprov1.placefacility.HistoryFragment;
-import com.example.finprov1.recom.HomeFragment;
+import com.example.finprov1.recommended.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 

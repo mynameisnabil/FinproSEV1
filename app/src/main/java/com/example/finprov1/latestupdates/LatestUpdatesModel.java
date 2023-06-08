@@ -1,14 +1,14 @@
-package com.example.finprov1.recom;
+package com.example.finprov1.latestupdates;
 
 import java.io.Serializable;
 
-public class RecomendedModel implements Serializable {
+public class LatestUpdatesModel implements Serializable {
 
     private String judul, subjudul;
 
     private int gambar;
 
-    public RecomendedModel(String judul, String subjudul, int gambar) {
+    public LatestUpdatesModel(String judul, String subjudul, int gambar) {
         this.judul = judul;
         this.subjudul = subjudul;
         this.gambar = gambar;
@@ -38,3 +38,4 @@ public class RecomendedModel implements Serializable {
         this.gambar = gambar;
     }
 }
+

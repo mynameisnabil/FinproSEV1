@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".auth.RegisterActivity">
+    tools:context=".auth.RegisterActivity"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,9 +13,10 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/logoapk"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/hobbyhivelogo"
             android:padding="20dp"/>
 
         <TextView
@@ -110,13 +112,26 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:gravity="center"
-            android:layout_margin="15dp"
+            android:layout_margin="0dp"
             android:text="@string/regisText"
             android:textSize="15sp" />
 
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvGoToLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Already have account? Login"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        />
 
 
 </RelativeLayout>

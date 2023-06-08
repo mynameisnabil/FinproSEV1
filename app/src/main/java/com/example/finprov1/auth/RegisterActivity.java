@@ -1,12 +1,17 @@
 package com.example.finprov1.auth;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.finprov1.R;
 import com.example.finprov1.database.AppDatabase;
 import com.example.finprov1.databinding.ActivityRegisterBinding;
 
@@ -21,6 +26,30 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         UserDao userDao = AppDatabase.getInstance(this).userDao();
 
+        binding.tvGoToLogin.setOnClickListener(view -> {
+
+            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+            startActivity(intent);
+
+            String fullText = "Don’t have account? Register";
+            int startIndex = fullText.indexOf("Register");
+            int endIndex = startIndex + "Register".length();
+
+            SpannableString spannableString = new SpannableString(fullText);
+            spannableString.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this, R.color.blue)), startIndex, endIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+            binding.tvGoToLogin.setText(spannableString);
+
+        });
+
+        String fullText = "Already have account? Login";
+        int startIndex = fullText.indexOf("Login");
+        int endIndex = startIndex + "Login".length();
+
+        SpannableString spannableString = new SpannableString(fullText);
+        spannableString.setSpan(new ForegroundColorSpan(ContextCompat.getColor(this, R.color.blue)), startIndex, endIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        binding.tvGoToLogin.setText(spannableString);
 
         binding.btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -10,16 +10,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:background="@drawable/headerbiru2"
         android:gravity="center">
 
         <ImageView
+            android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/txtnewsheader"
-            android:layout_margin="15dp"
-            android:layout_gravity="left"/>
+            android:layout_marginLeft="-270dp"
+            android:src="@drawable/back"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEWS"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            />
 
     </LinearLayout>
 

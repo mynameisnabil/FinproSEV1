@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".recom.HomeFragment"
+    tools:context=".recommended.HomeFragment"
     android:orientation="vertical">
 
     <ScrollView
@@ -12,12 +12,10 @@
         android:layout_height="wrap_content"
         >
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -32,27 +30,26 @@
                     android:gravity="top"
                     android:orientation="horizontal">
 
+
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="-50dp"
+                        android:layout_marginBottom="5dp"
                         android:layout_weight="1"
                         android:onClick="openDrawer"
                         android:src="@drawable/logohobby" />
 
-
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="20dp"
+                        android:layout_marginRight="-50dp"
+                        android:layout_marginBottom="5dp"
                         android:layout_weight="1"
                         android:onClick="openDrawer"
                         android:src="@drawable/profilhobby" />
-
 
                 </LinearLayout>
 
@@ -65,10 +62,9 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/news1"
+                    android:src="@drawable/ads"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"/>
-
 
             </LinearLayout>
 
@@ -81,12 +77,12 @@
                 android:textStyle="bold"
                 android:layout_margin="10dp"/>
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                >
 
                 <ImageButton
                     android:id="@+id/btnNews"
@@ -94,7 +90,9 @@
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
                     android:background="@color/white"
-                    android:src="@drawable/newsicon" />
+                    android:src="@drawable/newsicon"
+                    android:scaleType="centerInside"
+                    />
 
                 <ImageButton
                     android:id="@+id/btnPf"
@@ -102,42 +100,65 @@
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
                     android:background="@color/white"
-                    android:src="@drawable/pficon" />
+                    android:src="@drawable/pficon"
+                    android:scaleType="centerInside"
+                    />
 
                 <ImageButton
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
                     android:background="@color/white"
-                    android:src="@drawable/communityicon" />
+                    android:src="@drawable/communityicon"
+                    android:scaleType="centerInside"
+                    />
 
                 <ImageButton
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
                     android:background="@color/white"
-                    android:src="@drawable/turnamenticon" />
+                    android:src="@drawable/turnamenticon"
+                    android:scaleType="centerInside"
+                    />
                 <ImageButton
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
                     android:background="@color/white"
-                    android:src="@drawable/trainingicon" />
-
+                    android:src="@drawable/trainingicon"
+                    android:scaleType="centerInside"
+                    />
 
             </LinearLayout>
 
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Recomeded For You"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_margin="10dp"/>
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_margin="10dp">
 
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Recommended For You"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_weight="1"/>
 
+                <Button
+                    android:id="@+id/btnShowAllCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Show All"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp"
+                    android:background="@android:color/transparent"
+                    android:onClick="goToPlaceAndFacilityActivity"/>
+
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvRecom"
@@ -146,41 +167,74 @@
                 android:layout_margin="10dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_recom"
-
+                tools:listitem="@layout/item_recommended"
                 />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Latest Update"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_margin="10dp"/>
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_margin="10dp">
 
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Latest Updates"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_weight="1"/>
 
+                <Button
+                    android:id="@+id/btnShowAllLatestUpdates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Show All"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp"
+                    android:background="@android:color/transparent"
+                    android:onClick="goToNewsActivity"/>
+
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvLatst"
+                android:id="@+id/rvLatest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_recom"
+                tools:listitem="@layout/item_recommended"
                 />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Popular"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_margin="10dp"/>
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_margin="10dp">
 
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Popular"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_weight="1"/>
 
+                <Button
+                    android:id="@+id/btnShowAllPopular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Show All"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp"
+                    android:background="@android:color/transparent"
+                    android:onClick="goToPlaceAndFacilityActivity"/>
+
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvPopular"
@@ -189,19 +243,11 @@
                 android:layout_margin="10dp"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_recom"
+                tools:listitem="@layout/item_recommended"
                 />
-
 
         </LinearLayout>
 
     </ScrollView>
-
-
-
-
-
-
-
 
 </LinearLayout>
