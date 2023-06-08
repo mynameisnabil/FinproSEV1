@@ -33,6 +33,7 @@
                 android:layout_gravity="center_vertical">
 
                 <TextView
+                    android:id="@+id/news_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -43,6 +44,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/news_author_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -52,18 +54,8 @@
                     android:textSize="15sp"
                     android:textStyle="normal" />
 
-
                 <TextView
-                    android:id="@+id/itemNoTelp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:text="Last Update"
-                    android:textSize="10sp"
-                    android:textStyle="normal" />
-
-                <TextView
+                    android:id="@+id/news_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"

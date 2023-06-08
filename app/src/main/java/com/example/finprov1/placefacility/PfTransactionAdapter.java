@@ -13,7 +13,7 @@ import com.example.finprov1.databinding.ItemPftransaksiBinding;
 import java.util.ArrayList;
 import java.util.List;
 
-public class pfTransaksiAdapter extends RecyclerView.Adapter<pfTransaksiAdapter.ViewHolder> {
+public class PfTransactionAdapter extends RecyclerView.Adapter<PfTransactionAdapter.ViewHolder> {
 
     List<PfTransaction> listTransaksi = new ArrayList<>();
 

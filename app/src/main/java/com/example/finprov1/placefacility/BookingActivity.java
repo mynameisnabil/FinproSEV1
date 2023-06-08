@@ -102,7 +102,7 @@ public class BookingActivity extends AppCompatActivity {
                                 binding.dateEdt.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
                             }
                         }, year, month, day);
-                datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+//                datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
                 datePickerDialog.show();
             }
         });

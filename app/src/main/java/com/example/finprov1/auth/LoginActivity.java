@@ -12,6 +12,8 @@ import com.example.finprov1.MainActivity;
 import com.example.finprov1.database.AppDatabase;
 import com.example.finprov1.databinding.ActivityLoginBinding;
 
+import java.util.ArrayList;
+
 public class LoginActivity extends AppCompatActivity {
 
     ActivityLoginBinding binding;

@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.example.finprov1.R;
 import com.example.finprov1.databinding.FragmentHomeBinding;
+import com.example.finprov1.news.NewsActivity;
 import com.example.finprov1.placefacility.PlaceAndFacilityActivity;
 
 import java.util.ArrayList;
@@ -46,6 +47,13 @@ public class HomeFragment extends Fragment {
         binding.rvPopular.setAdapter(adapter);
         binding.rvPopular.setLayoutManager(new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false));
 
+        binding.btnNews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(requireContext(), NewsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         binding.btnPf.setOnClickListener(new View.OnClickListener() {
             @Override

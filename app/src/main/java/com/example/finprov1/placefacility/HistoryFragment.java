@@ -35,7 +35,7 @@ public class HistoryFragment extends Fragment {
     public void onViewCreated(@Nullable View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        pfTransaksiAdapter adapter = new pfTransaksiAdapter();
+        PfTransactionAdapter adapter = new PfTransactionAdapter();
         binding.rvBaru.setLayoutManager(new LinearLayoutManager(requireContext()));
         binding.rvBaru.setHasFixedSize(true);
         binding.rvBaru.setAdapter(adapter);
