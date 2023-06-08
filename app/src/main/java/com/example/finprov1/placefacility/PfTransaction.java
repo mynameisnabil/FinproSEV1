@@ -15,7 +15,8 @@ public class PfTransaction {
                 ", Harga Lapang: " + hargaLapang +
                 ", Tanggal: " + date +
                 ", Nama: " + name +
-                ", Email: " + email;
+                ", Email: " + email +
+                ", Jam : " + jadwaljam1 ;
     }
 
 
@@ -49,4 +50,9 @@ public class PfTransaction {
 
     @ColumnInfo(name = "kotaLapang")
     public String kotaLapang;
+
+    @ColumnInfo(name = "jadwaljam")
+    public String jadwaljam1;
+
+
 }

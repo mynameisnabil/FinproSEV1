@@ -1,17 +1,24 @@
 package com.example.finprov1.placefacility;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.finprov1.R;
 import com.example.finprov1.database.AppDatabase;
 import com.example.finprov1.databinding.ActivityBookingBinding;
 
@@ -34,8 +41,10 @@ public class BookingActivity extends AppCompatActivity {
         pfTransactionDao pfTransactionDao = AppDatabase.getInstance(this).pftransactionDao();
 
         binding.btnBookNow.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+
                 PfTransaction pfTransaction = new PfTransaction();
 
                 SharedPreferences sharedPreferences = getSharedPreferences("sharedpref", MODE_PRIVATE);
@@ -52,26 +61,66 @@ public class BookingActivity extends AppCompatActivity {
                 pfTransaction.name = namePembeli;
                 pfTransaction.phone = phonePembeli;
                 pfTransaction.date = datePembeli;
+                if (binding.checkBoxjam1.isChecked()) {
+                    String jam1 = binding.txtjam1.getText().toString();
+                    pfTransaction.jadwaljam1 = jam1;
+
+                } else {
+                    pfTransaction.jadwaljam1 = " ";
+                }
+
+
                 pfTransaction.uid = uid;
 
 
-                try {
-                    pfTransactionDao.pfAddTransaksi(pfTransaction);
-                    Log.d("BookingActivity", "Data transaksi berhasil disimpan: " + pfTransaction.toString());
-                    Toast.makeText(BookingActivity.this, "Data transaksi berhasil disimpan", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(BookingActivity.this, PlaceAndFacilityActivity.class);
-                        setResult(RESULT_OK, intent);
-                    finish();
-                } catch (SQLiteException e) {
-                    Log.e("BookingActivity", "Gagal menyimpan data transaksi: " + e.getMessage());
-                    Toast.makeText(BookingActivity.this, "Gagal menyimpan data transaksi", Toast.LENGTH_SHORT).show();
-                }
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(BookingActivity.this);
+                builder.setTitle("Password Check");
+                builder.setMessage("Masukkan Password Anda:");
+
+                LayoutInflater inflater = LayoutInflater.from(BookingActivity.this);
+                View vw = inflater.inflate(R.layout.your_edittext_layout, null);
+                final EditText editText = vw.findViewById(R.id.your_edittext_id);
+
+                builder.setView(vw);
+
+
+
+
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        try {
+
+                            pfTransactionDao.pfAddTransaksi(pfTransaction);
+                            Log.d("BookingActivity", "Data transaksi berhasil disimpan: " + pfTransaction.toString());
+                            Toast.makeText(BookingActivity.this, "Data transaksi berhasil disimpan", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(BookingActivity.this, PlaceAndFacilityActivity.class);
+                            setResult(RESULT_OK, intent);
+                            finish();
+                        } catch (SQLiteException e) {
+                            Log.e("BookingActivity", "Gagal menyimpan data transaksi: " + e.getMessage());
+                            Toast.makeText(BookingActivity.this, "Gagal menyimpan data transaksi", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
+                builder.show();
+
 
 
             }
         });
     }
 
+
+
+
+
+    public void setJadwal() {
+
+    }
 
 
     public void setCalender() {
