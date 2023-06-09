@@ -1,6 +1,5 @@
 package com.example.finprov1.news;
 
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +17,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     private OnNewsClickListener listener;
 
     public interface OnNewsClickListener {
-        void onCreateView(Bundle savedInstanceState);
-
         void onNewsClick(NewsModel newsModel);
     }
 

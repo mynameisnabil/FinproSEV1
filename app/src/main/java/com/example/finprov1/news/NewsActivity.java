@@ -2,6 +2,7 @@ package com.example.finprov1.news;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,15 +14,16 @@ import com.example.finprov1.databinding.ActivityNewsBinding;
 import com.example.finprov1.placefacility.HistoryFragment;
 import com.example.finprov1.recommended.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class NewsActivity extends AppCompatActivity implements NewsAdapter.OnNewsClickListener {
 
-    List<NewsModel> newsList;
-    NewsAdapter newsAdapter;
-    ActivityNewsBinding binding;
+    private List<NewsModel> newsList;
+    private NewsAdapter newsAdapter;
+    private ActivityNewsBinding binding;
     BottomNavigationView bottomNavigationView;
     HomeFragment homeFragment = new HomeFragment();
 
@@ -30,12 +32,34 @@ public class NewsActivity extends AppCompatActivity implements NewsAdapter.OnNew
     HistoryFragment historyFragment = new HistoryFragment();
 
     @Override
-    public void onCreateView(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityNewsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         binding.rvNews.setLayoutManager(new LinearLayoutManager(this));
+
+//        bottomNavigationView  = findViewById(R.id.bottom_navigation);
+//
+//        getSupportFragmentManager().beginTransaction().replace(R.id.container,homeFragment).commit();
+//        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(MenuItem item) {
+//                switch (item.getItemId()){
+//                    case R.id.home:
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.container,homeFragment).commit();
+//                        return true;
+//                    case R.id.menu:
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.container,menuFragment).commit();
+//                        return true;
+//                    case R.id.history:
+//                        getSupportFragmentManager().beginTransaction().replace(R.id.container,historyFragment).commit();
+//                        return true;
+//                }
+//
+//                return false;
+//            }
+//        });
 
         newsList = new ArrayList<>();
         newsList.add(new NewsModel("Indonesia akan melawan Argentina di GBK", "Bima Sakti - Jakarta", R.drawable.news1, "Pertandingan besar akan segera terjadi di tanah air ketika tim nasional Indonesia bersiap untuk menghadapi tim nasional Argentina di Stadion Utama Gelora Bung Karno (GBK). Ini adalah pertandingan yang penuh gairah dan ditunggu-tunggu oleh para penggemar sepak bola di seluruh Indonesia.\n" +
