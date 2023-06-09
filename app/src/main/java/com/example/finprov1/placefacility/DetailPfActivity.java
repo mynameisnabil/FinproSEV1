@@ -32,7 +32,7 @@ public class DetailPfActivity extends AppCompatActivity {
 
         Pfmodel data = (Pfmodel) getIntent().getSerializableExtra("pfmodel");
         binding.imgLapangan.setImageResource(data.getGambar());
-        binding.txtContactNamaLapangan.setText(data.getNamalapangan());
+        binding.txtNamaLapangan.setText(data.getNamalapangan());
         binding.txtDeskripsiLapangan.setText(data.getDeskripsi());
         binding.txtOpenHourLapangan.setText(data.getOpenhour());
         binding.txtPriceLapangan.setText(data.getPrice());
