@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".transaction.DetailTransaction"
+    android:gravity="center"
+    android:background="@color/blue">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Purchase History"
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_margin="10dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/imgDetailTransaction"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/lapang1"
+                    android:scaleType="centerCrop"/>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/txtNamaLapanganDetailTransaction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Binus Basketball Court"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"
+                        android:layout_margin="5dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="JCPX988123JQEQEQ"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:layout_margin="5dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/txtNamaOrangDetailTransaction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Rudi Antara"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:layout_margin="5dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/txtEmailOrangDetailTransaction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="rudi_antara@gmail.com"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:layout_margin="5dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/txtNoTelpOrangDetailTransaction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0821377126344"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:layout_margin="5dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/txtAlamatOrangDetailTransaction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Jakarta, Indonesia"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:layout_margin="5dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/txtTanggalDetailTransaction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="DD / MM / YYYY"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:layout_margin="5dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/txtJamDetailTransaction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="10:00 - 11:00"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp"
+                        android:layout_margin="5dp"
+                        android:textStyle="bold"/>
+
+
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    <ImageButton
+        android:id="@+id/btnDone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DONE"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:background="?attr/selectableItemBackground"
+        android:src="@drawable/btndone"
+        android:padding="10dp"/>
+
+
+
+
+</LinearLayout>

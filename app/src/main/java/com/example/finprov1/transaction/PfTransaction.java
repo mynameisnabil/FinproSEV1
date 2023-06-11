@@ -1,11 +1,13 @@
-package com.example.finprov1.placefacility;
+package com.example.finprov1.transaction;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity
-public class PfTransaction {
+public class PfTransaction implements Serializable {
 
 
     @Override
@@ -53,6 +55,9 @@ public class PfTransaction {
 
     @ColumnInfo(name = "jadwaljam")
     public String jadwaljam1;
+
+    @ColumnInfo(name = "gambar")
+    public int gambar;
 
 
 }

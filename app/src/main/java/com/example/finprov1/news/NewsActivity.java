@@ -2,7 +2,6 @@ package com.example.finprov1.news;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,10 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.example.finprov1.MenuFragment;
 import com.example.finprov1.R;
 import com.example.finprov1.databinding.ActivityNewsBinding;
-import com.example.finprov1.placefacility.HistoryFragment;
+import com.example.finprov1.transaction.HistoryFragment;
 import com.example.finprov1.recommended.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 import java.util.List;

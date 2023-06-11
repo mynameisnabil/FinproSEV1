@@ -8,8 +8,8 @@ import androidx.room.RoomDatabase;
 
 import com.example.finprov1.auth.User;
 import com.example.finprov1.auth.UserDao;
-import com.example.finprov1.placefacility.PfTransaction;
-import com.example.finprov1.placefacility.pfTransactionDao;
+import com.example.finprov1.transaction.PfTransaction;
+import com.example.finprov1.transaction.pfTransactionDao;
 
 @Database(entities = {User.class, PfTransaction.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {

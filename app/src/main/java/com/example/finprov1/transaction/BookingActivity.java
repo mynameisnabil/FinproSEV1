@@ -1,4 +1,4 @@
-package com.example.finprov1.placefacility;
+package com.example.finprov1.transaction;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,18 +9,20 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
-import android.text.InputType;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.finprov1.R;
+import com.example.finprov1.auth.User;
+import com.example.finprov1.auth.UserDao;
 import com.example.finprov1.database.AppDatabase;
 import com.example.finprov1.databinding.ActivityBookingBinding;
+import com.example.finprov1.placefacility.Pfmodel;
+import com.example.finprov1.placefacility.PlaceAndFacilityActivity;
 
 import java.util.Calendar;
 
@@ -50,16 +52,21 @@ public class BookingActivity extends AppCompatActivity {
                 SharedPreferences sharedPreferences = getSharedPreferences("sharedpref", MODE_PRIVATE);
                 int uid = sharedPreferences.getInt("uid", 0);
 
+
+
                 String emailPembeli = binding.etEmailForm.getText().toString();
                 String namePembeli = binding.etNameForm.getText().toString();
                 String phonePembeli = binding.etPhoneForm.getText().toString();
                 String datePembeli = binding.dateEdt.getText().toString();
+                String alamatPembeli = binding.etAddress.getText().toString();
+                pfTransaction.gambar = data.getGambar();
                 pfTransaction.judulLapang = data.getNamalapangan();
                 pfTransaction.kotaLapang = data.getKota();
                 pfTransaction.hargaLapang = data.getPrice();
                 pfTransaction.email = emailPembeli;
                 pfTransaction.name = namePembeli;
                 pfTransaction.phone = phonePembeli;
+                pfTransaction.address = alamatPembeli;
                 pfTransaction.date = datePembeli;
                 if (binding.checkBoxjam1.isChecked()) {
                     String jam1 = binding.txtjam1.getText().toString();

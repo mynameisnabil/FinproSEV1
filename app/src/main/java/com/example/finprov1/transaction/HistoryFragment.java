@@ -1,4 +1,4 @@
-package com.example.finprov1.placefacility;
+package com.example.finprov1.transaction;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -31,6 +31,9 @@ public class HistoryFragment extends Fragment {
     }
 
 
+//    buat intent dan put extra untuk mengirim data ke detail transactio
+
+
     @Override
     public void onViewCreated(@Nullable View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -52,5 +55,8 @@ public class HistoryFragment extends Fragment {
 
         adapter.notifyDataSetChanged();
     }
+
+
+
 
 }

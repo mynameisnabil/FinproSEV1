@@ -1,4 +1,4 @@
-package com.example.finprov1.placefacility;
+package com.example.finprov1.transaction;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
