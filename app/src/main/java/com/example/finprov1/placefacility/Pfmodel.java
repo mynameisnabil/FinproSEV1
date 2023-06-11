@@ -6,9 +6,11 @@ public class Pfmodel implements Serializable {
 
     private String namalapangan, deskripsi, kota, openhour, price, namaPenjual, phonePenjual, emailPenjual;
 
+    private double latitude, longitude;
+
      private int gambar;
 
-        public Pfmodel(String namalapangan, String deskripsi, String kota, String openhour, String price, String namaPenjual, String phonePenjual, String emailPenjual, int gambar) {
+        public Pfmodel(String namalapangan, String deskripsi, String kota, String openhour, String price, String namaPenjual, String phonePenjual, String emailPenjual, int gambar, double latitude, double longitude) {
             this.namalapangan = namalapangan;
             this.deskripsi = deskripsi;
             this.kota = kota;
@@ -18,7 +20,26 @@ public class Pfmodel implements Serializable {
             this.phonePenjual = phonePenjual;
             this.emailPenjual = emailPenjual;
             this.gambar = gambar;
+            this.latitude = latitude;
+            this.longitude = longitude;
         }
+
+        public double getLatitude() {
+            return latitude;
+        }
+
+        public void setLatitude(double latitude) {
+            this.latitude = latitude;
+        }
+
+        public double getLongitude() {
+            return longitude;
+        }
+
+        public void setLongitude(double longitude) {
+            this.longitude = longitude;
+        }
+
 
     public String getKota() {
         return kota;

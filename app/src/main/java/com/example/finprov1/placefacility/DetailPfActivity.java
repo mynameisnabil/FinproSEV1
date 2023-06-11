@@ -21,8 +21,7 @@ public class DetailPfActivity extends AppCompatActivity {
     ActivityDetailpfBinding binding;
 
     private GoogleMap map;
-    private double LAT = -6.20201;
-    private double LON = 106.78113;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +59,7 @@ public class DetailPfActivity extends AppCompatActivity {
             public void onMapReady(GoogleMap googleMap) {
                 map = googleMap;
 
-                LatLng latLng = new LatLng(LAT, LON);
+                LatLng latLng = new LatLng(data.getLatitude(), data.getLongitude());
                 map.addMarker(new MarkerOptions().position(latLng).title("Marker in Binus"));
                 map.moveCamera(CameraUpdateFactory.newLatLng(latLng));
 
