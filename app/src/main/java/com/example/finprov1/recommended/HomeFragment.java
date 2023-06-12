@@ -13,11 +13,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.finprov1.R;
+import com.example.finprov1.community.CommunityActivity;
 import com.example.finprov1.databinding.FragmentHomeBinding;
 import com.example.finprov1.latestupdates.LatestUpdatesAdapter;
 import com.example.finprov1.latestupdates.LatestUpdatesModel;
 import com.example.finprov1.news.NewsActivity;
 import com.example.finprov1.placefacility.PlaceAndFacilityActivity;
+import com.example.finprov1.training.TrainingAndOnlineActivity;
+import com.example.finprov1.turnament.TournamentActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +65,30 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(requireContext(), PlaceAndFacilityActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.btnCommunity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(requireContext(), CommunityActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.btnTurnament.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(requireContext(), TournamentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.btnTraining.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(requireContext(), TrainingAndOnlineActivity.class);
                 startActivity(intent);
             }
         });

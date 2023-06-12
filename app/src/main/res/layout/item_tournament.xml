@@ -4,9 +4,10 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_marginTop="5dp"
+    android:layout_marginLeft="5dp"
     android:layout_marginRight="5dp"
-    android:layout_marginLeft="5dp">
+    android:layout_marginTop="5dp"
+    android:background="@drawable/rounded_corner">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -15,23 +16,24 @@
         app:cardCornerRadius="4dp"
         app:cardElevation="4dp"
         app:cardBackgroundColor="@color/white"
-        app:contentPadding="5dp">
+        app:contentPadding="5dp"
+        >
 
         <LinearLayout
-            android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_margin="5dp"
+
             >
 
             <ImageView
-                android:id="@+id/imgPfItem"
+                android:id="@+id/imgTrItem"
                 android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_height="150dp"
                 android:padding="10dp"
-                android:scaleType="fitXY"
                 android:src="@drawable/lapang1"
+                android:scaleType="centerCrop"
                 />
 
             <LinearLayout
@@ -41,12 +43,11 @@
                 android:layout_gravity="center_vertical">
 
                 <TextView
-                    android:id="@+id/juduPfItemTransaksi"
+                    android:id="@+id/juduTrItem"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="2dp"
-                    android:layout_marginRight="10dp"
                     android:text="Judul"
                     android:textSize="25sp"
                     android:textStyle="bold"
@@ -54,13 +55,13 @@
                     />
 
                 <TextView
-                    android:id="@+id/kodePfItemTransaksi"
+                    android:id="@+id/kotaPfItem"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="2dp"
                     android:layout_marginRight="10dp"
-                    android:text="JX1213232424KG"
+                    android:text="Kota"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"
@@ -68,23 +69,22 @@
 
 
                 <TextView
-                    android:id="@+id/kotaPfItemTransaksi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:text="Kota"
-                    android:textSize="10sp"
+                    android:text="Start From"
+                    android:textSize="15sp"
                     android:textStyle="normal" />
 
                 <TextView
-                    android:id="@+id/hargaPfItemTransaksi"
+                    android:id="@+id/hargaTrItem"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="2dp"
                     android:layout_marginRight="10dp"
-                    android:text="Rp 200.000"
+                    android:text="Rp 100.000 / Hour"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@color/black"

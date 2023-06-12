@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.finprov1.MenuFragment;
+import com.example.finprov1.ProfileFragment;
 import com.example.finprov1.R;
 import com.example.finprov1.databinding.ActivityNewsBinding;
 import com.example.finprov1.transaction.HistoryFragment;
@@ -25,7 +25,7 @@ public class NewsActivity extends AppCompatActivity implements NewsAdapter.OnNew
     BottomNavigationView bottomNavigationView;
     HomeFragment homeFragment = new HomeFragment();
 
-    MenuFragment menuFragment = new MenuFragment();
+    ProfileFragment profileFragment = new ProfileFragment();
 
     HistoryFragment historyFragment = new HistoryFragment();
 

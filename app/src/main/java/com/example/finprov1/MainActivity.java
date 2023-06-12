@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     HomeFragment homeFragment = new HomeFragment();
 
-    MenuFragment menuFragment = new MenuFragment();
+    ProfileFragment profileFragment = new ProfileFragment();
 
     HistoryFragment historyFragment = new HistoryFragment();
 
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.container,homeFragment).commit();
                         return true;
                     case R.id.menu:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,menuFragment).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, profileFragment).commit();
                         return true;
                     case R.id.history:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container,historyFragment).commit();

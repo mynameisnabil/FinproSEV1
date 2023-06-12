@@ -105,6 +105,7 @@
                     />
 
                 <ImageButton
+                    android:id="@+id/btnCommunity"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
@@ -114,6 +115,7 @@
                     />
 
                 <ImageButton
+                    android:id="@+id/btnTurnament"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"
@@ -122,6 +124,7 @@
                     android:scaleType="centerInside"
                     />
                 <ImageButton
+                    android:id="@+id/btnTraining"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_margin="10dp"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".news.NewsActivity">
+    tools:context=".training.TrainingAndOnlineActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,17 +20,16 @@
             android:layout_height="wrap_content"
             android:src="@drawable/back"
             android:scaleType="centerCrop"
-            />
+            android:layout_weight="0" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PLACE AND FACILITY"
-            android:layout_marginRight="70dp"
+            android:text="Training And Online Class"
             android:textColor="@color/white"
+            android:textSize="25dp"
             android:textStyle="bold"
-            android:textSize="30dp"
-            />
+            android:layout_weight="1" />
 
     </LinearLayout>
 
@@ -67,7 +66,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvPvItem"
+        android:id="@+id/rvTraining"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
