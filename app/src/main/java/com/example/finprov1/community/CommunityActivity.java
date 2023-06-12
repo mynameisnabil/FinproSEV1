@@ -17,21 +17,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommunityActivity extends AppCompatActivity implements CommunityAdapter.OnCommunityClickListener {
-
-    private List<CommunityModel> communityList;
-
-    private CommunityAdapter adapter;
+public class CommunityActivity extends AppCompatActivity {
 
     private ActivityCommunityBinding binding;
 
-    BottomNavigationView bottomNavigationView;
 
-    HomeFragment homeFragment = new HomeFragment();
-
-    ProfileFragment profileFragment = new ProfileFragment();
-
-    HistoryFragment historyFragment = new HistoryFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,18 +29,17 @@ public class CommunityActivity extends AppCompatActivity implements CommunityAda
         binding = ActivityCommunityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        CommunityAdapter adapter = new CommunityAdapter();
+        binding.rvCommunity.setAdapter(adapter);
         binding.rvCommunity.setLayoutManager(new LinearLayoutManager(this));
 
-        communityList = new ArrayList<>();
+        List<CommunityModel> listCommunity = new ArrayList<>();
+        listCommunity.add(new CommunityModel("PERSIJA Football Community", "BINUS Basketball Community adalah komunitas yang didirikan pada tahun 2005 oleh...", "Jakarta","07.00-22.00", "Rp. 100.000", "Liam Anderson", "08912317865", "liam@gmail.com", R.drawable.persija, -6.20201, 106.78113));
+        listCommunity.add(new CommunityModel("BINUS Mobile Legend Community", "BINUS Mobile Legend Community adalah komunitas yang didirikan pada tahun 2005 oleh...", "Jakarta","07.00-22.00", "Rp. 100.000", "Olivia Martinez", "081238726789", "olivia@gmail.com", R.drawable.binusmobil, -6.20201, 106.78113));
+        listCommunity.add(new CommunityModel("BINUS Tennis Community", "BINUS Tennis Community adalah komunitas yang didirikan pada tahun 2005 oleh...", "Jakarta","07.00-22.00", "Rp. 100.000", "Mason Thompson", "08198456789", "mason@gmail.com", R.drawable.binustenis, -6.20201, 106.78113));
+        listCommunity.add(new CommunityModel("BINUS Basketball Community", "BINUS Basketball Community adalah komunitas yang didirikan pada tahun 2005 oleh...", "Jakarta","07.00-22.00", "Rp. 100.000", "Lucas Robinson", "08123459889", "lucas@gmail.com", R.drawable.binusbasket, -6.20201, 106.78113));
+        adapter.setData(listCommunity);
 
-        communityList.add(new CommunityModel("Community 1", "Jajang - Jakarta", R.drawable.ic_launcher_background, "Community 1"));
-        communityList.add(new CommunityModel("Community 2", "Jajang - Jakarta", R.drawable.ic_launcher_background, "Community 1"));
-        communityList.add(new CommunityModel("Community 3", "Jajang - Jakarta", R.drawable.ic_launcher_background, "Community 1"));
-        communityList.add(new CommunityModel("Community 4", "Jajang - Jakarta", R.drawable.ic_launcher_background, "Community 1"));
-        communityList.add(new CommunityModel("Community 5", "Jajang - Jakarta", R.drawable.ic_launcher_background, "Community 1"));
-
-        adapter = new CommunityAdapter(communityList, this);
-        binding.rvCommunity.setAdapter(adapter);
 
         binding.btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,16 +49,5 @@ public class CommunityActivity extends AppCompatActivity implements CommunityAda
         });
     }
 
-    @Override
-    public void onCommunityClick(CommunityModel communityModel) {
-        Intent intent = new Intent(this, CommunityDetail.class);
-        intent.putExtra("title", communityModel.getTitle());
-        intent.putExtra("author_location", communityModel.getAuthor_location());
-        intent.putExtra("image", communityModel.getImageResourceId());
-        intent.putExtra("description", communityModel.getDescription());
-        startActivity(intent);
 
-
-
-    }
 }

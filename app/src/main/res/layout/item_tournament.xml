@@ -33,7 +33,7 @@
                 android:layout_height="150dp"
                 android:padding="10dp"
                 android:src="@drawable/lapang1"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 />
 
             <LinearLayout

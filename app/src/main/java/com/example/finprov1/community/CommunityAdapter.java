@@ -1,5 +1,7 @@
 package com.example.finprov1.community;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,23 +9,20 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.finprov1.R;
 import com.example.finprov1.databinding.ItemCommunityBinding;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.CommunityViewHolder> {
+public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.ViewHolder>{
 
-    private static List<CommunityModel> communityList;
+    List<CommunityModel> listCommunity = new ArrayList<>();
 
-    private OnCommunityClickListener listener;
-
-    public interface OnCommunityClickListener {
-        void onCommunityClick(CommunityModel communityModel);
-    }
-
-    public CommunityAdapter(List<CommunityModel> communityList, OnCommunityClickListener listener) {
-        this.communityList = communityList;
-        this.listener = listener;
+    void setData(List<CommunityModel> listCommunity) {
+        this.listCommunity.clear();
+        this.listCommunity.addAll(listCommunity);
+        notifyDataSetChanged();
     }
 
 
@@ -31,47 +30,50 @@ public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.Comm
 
     @NonNull
     @Override
-    public CommunityAdapter.CommunityViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CommunityAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_community, parent, false);
+        return new ViewHolder(v);
 
-        ItemCommunityBinding binding = ItemCommunityBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
-        return new CommunityViewHolder(binding, listener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CommunityAdapter.CommunityViewHolder holder, int position) {
-        CommunityModel communityModel = communityList.get(position);
-        holder.bind(communityModel);
+    public void onBindViewHolder(@NonNull CommunityAdapter.ViewHolder holder, int position) {
+        CommunityModel communityModel = listCommunity.get(position);
+        holder.bindData(communityModel);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = holder.itemView.getContext();
+                Intent intent = new Intent(context, CommunityDetail.class);
+                intent.putExtra("communitymodel", communityModel);
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
     public int getItemCount() {
 
-        return communityList.size();
+        return listCommunity.size();
     }
 
-    public class CommunityViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private ItemCommunityBinding binding;
+        ItemCommunityBinding binding;
 
-        public CommunityViewHolder(ItemCommunityBinding binding, OnCommunityClickListener listener) {
-            super(binding.getRoot());
-            this.binding = binding;
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            binding = ItemCommunityBinding.bind(itemView);
 
-            itemView.setOnClickListener(v -> {
-                int position = getAdapterPosition();
-                if (listener != null && position != RecyclerView.NO_POSITION) {
-                    CommunityModel clickedCommunityModel = communityList.get(position);
-                    listener.onCommunityClick(clickedCommunityModel);
-                }
-            });
         }
 
-
-        public void bind(CommunityModel communityModel) {
-            binding.imgItemCom.setImageResource(communityModel.getImageResourceId());
-            binding.itemCommunityTittle.setText(communityModel.getTitle());
-            binding.itemCommunityAuthorLocation.setText(communityModel.getAuthor_location());
-            binding.itemCommunityDescription.setText(communityModel.getDescription());
+        public void bindData(CommunityModel communityModel) {
+            binding.imgItemCom.setImageResource(communityModel.getGambar());
+            binding.itemCommunityTittle.setText(communityModel.getNameCommunity());
+            binding.itemCommunityAuthorLocation.setText(communityModel.getNamaContactCommunity());
+            binding.itemCommunityDescription.setText(communityModel.getDeskripsi());
         }
     }
 }
