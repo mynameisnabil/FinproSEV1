@@ -8,6 +8,6 @@
         android:title="History"
         android:icon="@drawable/history"/>
     <item android:id="@+id/menu"
-        android:title="Menu"
-        android:icon="@drawable/menufinpro"/>
+        android:title="Profile"
+        android:icon="@drawable/user"/>
 </menu>

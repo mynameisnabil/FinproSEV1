@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.finprov1.ProfileFragment;
 import com.example.finprov1.R;
 import com.example.finprov1.community.CommunityActivity;
 import com.example.finprov1.databinding.FragmentHomeBinding;
@@ -58,6 +59,19 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(requireContext(), NewsActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        binding.btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // intent ke fragment
+                ProfileFragment profileFragment = new ProfileFragment();
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, profileFragment)
+                        .addToBackStack(null)
+                        .commit();
+
             }
         });
 

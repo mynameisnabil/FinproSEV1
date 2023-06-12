@@ -1,5 +1,9 @@
 package com.example.finprov1;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.finprov1.auth.LoginActivity;
 import com.example.finprov1.auth.User;
 import com.example.finprov1.auth.UserDao;
 import com.example.finprov1.database.AppDatabase;
@@ -34,8 +39,9 @@ public class ProfileFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         userDao = AppDatabase.getInstance(requireContext()).userDao();
-        int userId = 1; // Update with the appropriate user ID
-        currentUser = userDao.getUser(userId);
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences("sharedpref", MODE_PRIVATE);
+        int uid = sharedPreferences.getInt("uid", 0);
+        currentUser = userDao.getUser(uid);
 
         if (currentUser != null) {
             binding.etNameFormProfile.setText(currentUser.name);
@@ -55,6 +61,22 @@ public class ProfileFragment extends Fragment {
                     userDao.update(currentUser);
                     Toast.makeText(requireContext(), "Profile updated successfully", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        binding.btnLogoutProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.clear();
+                editor.apply();
+
+                Toast.makeText(requireContext(), "Logout successfully", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(requireContext(), LoginActivity.class);
+                startActivity(intent);
+
+                requireActivity().finish();
             }
         });
     }
