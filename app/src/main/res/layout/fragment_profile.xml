@@ -66,7 +66,7 @@
                         android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/etNameForm"
+                        android:id="@+id/etNameFormProfile"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:background="@drawable/recentagleedit"
@@ -83,7 +83,7 @@
                         android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/etEmailForm"
+                        android:id="@+id/etEmailFormProfile"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginTop="5dp"
@@ -102,7 +102,7 @@
                         android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/etPhoneForm"
+                        android:id="@+id/etPhoneFormProfile"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginTop="5dp"
@@ -117,31 +117,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="5dp"
-                        android:text="Address"
-                        android:textColor="#000000"
-                        android:textSize="16sp" />
-
-                    <EditText
-                        android:id="@+id/etAddress"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/recentagleedit"
-                        android:hint="Enter your address"
-                        android:padding="10dp" />
-
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="5dp"
                         android:text="Password"
                         android:textColor="#000000"
                         android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/etPassword"
+                        android:id="@+id/etPasswordProfile"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginTop="5dp"
@@ -154,7 +135,7 @@
 
 
                 <ImageButton
-                    android:id="@+id/btn_book_now"
+                    android:id="@+id/btn_save_profile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
