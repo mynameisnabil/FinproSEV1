@@ -60,7 +60,7 @@ public class DetailPfActivity extends AppCompatActivity {
                 map = googleMap;
 
                 LatLng latLng = new LatLng(data.getLatitude(), data.getLongitude());
-                map.addMarker(new MarkerOptions().position(latLng).title("Marker in Binus"));
+                map.addMarker(new MarkerOptions().position(latLng).title(""));
                 map.moveCamera(CameraUpdateFactory.newLatLng(latLng));
 
             }
